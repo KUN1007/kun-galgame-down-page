@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUN Visual Novel Forum</title>
+    <meta
+      name="description"
+      content="The CUTEST Visual Novel Forum! Visual Novel Communication, Visual Novel Technique.To Create The Best Atmosphere! NO ADs Forever! Free Forever!"
+    />
+    <meta
+      name="keywords"
+      content="Visualnovel, visualnovel downloads, visualnovel reviews, visualnovel data analysis, visualnovel news, visualnovel translation/internationalization, visualnovel production, visualnovel discussions, visualnovel sources, technical exchanges, other discussions."
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="og:title" content="KUN Visual Novel" />
+    <meta
+      name="og:description"
+      content="The CUTEST Visual Novel Forum! Visual Novel Communication, Visual Novel Technique.To Create The Best Atmosphere! NO ADs Forever! Free Forever!"
+    />
+    <meta property="og:image" content="/kungalgame.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.kungal.com" />
+    <meta property="twitter:card" content="summary" />
+    <meta name="twitter:title" content="KUN Visual Novel" />
+    <meta
+      name="twitter:description"
+      content="The CUTEST Visual Novel Forum! Visual Novel Communication, Visual Novel Technique.To Create The Best Atmosphere! NO ADs Forever! Free Forever!"
+    />
+    <meta property="twitter:image" content="/kungalgame.webp" />
+    <meta property="twitter:url" content="https://www.kungal.com" />
+    <meta name="theme-color" content="#218bff" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <style>
+      :root {
+        --kungalgame-blue-5: #0969da;
+        --shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05),
+          0 1px 4px hsla(0, 0%, 0%, 0.05), 0 2px 8px hsla(0, 0%, 0%, 0.05);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .root {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .language {
+        position: absolute;
+        top: -33px;
+        cursor: pointer;
+      }
+
+      .language span:last-child {
+        margin-left: 10px;
+      }
+
+      .wrapper {
+        position: relative;
+        width: 350px;
+        height: 250px;
+        border: 1px solid var(--kungalgame-blue-5);
+        box-shadow: var(--shadow);
+      }
+
+      .container {
+        display: none;
+      }
+
+      .container.active {
+        display: block;
+      }
+
+      .title {
+        font-size: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        color: var(--kungalgame-blue-5);
+      }
+
+      .content {
+        padding: 17px;
+        padding-top: 0;
+        font-size: 17px;
+        white-space: pre-wrap;
+      }
+
+      .selected {
+        color: var(--kungalgame-blue-5);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="root">
+      <div class="wrapper">
+        <div class="language">
+          <span class="english selected">English</span>
+          <span class="chinese">简体中文</span>
+        </div>
+
+        <div class="container en-us active">
+          <div class="title">Down page</div>
+          <pre class="content">
+Information: Website offline for updates. This process will take approximately 30 minutes.</pre
+          >
+        </div>
+
+        <div class="container zh-cn">
+          <div class="title">下线页面</div>
+          <pre class="content">
+提示信息: 网站下线更新，此过程大约需要 30 分钟</pre
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var englishSpan = document.querySelector('.english')
+      var chineseSpan = document.querySelector('.chinese')
+      var enContainer = document.querySelector('.en-us')
+      var zhContainer = document.querySelector('.zh-cn')
+      // var userLanguage = navigator.language || navigator.userLanguage
+
+      englishSpan.addEventListener('click', function () {
+        englishSpan.classList.add('selected')
+        chineseSpan.classList.remove('selected')
+        enContainer.classList.add('active')
+        zhContainer.classList.remove('active')
+
+        document.documentElement.lang = 'en'
+        document.title = 'KUN Visual Novel Forum'
+      })
+
+      chineseSpan.addEventListener('click', function () {
+        chineseSpan.classList.add('selected')
+        englishSpan.classList.remove('selected')
+        zhContainer.classList.add('active')
+        enContainer.classList.remove('active')
+
+        document.documentElement.lang = 'zh-CN'
+        document.title = '鲲 Galgame 论坛'
+      })
+    </script>
+  </body>
+</html>
